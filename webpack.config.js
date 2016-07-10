@@ -8,6 +8,11 @@ module.exports = {
       // require the Node-only "jsdom" package.
       IN_BROWSER: true,
 
+      // Force NODE_ENV to be production, to get rid of warnings
+      'process.env':{
+        'NODE_ENV': JSON.stringify('production')
+      },
+
       // Expose the version to embed in the final file.
       TURBO_REACT_VERSION: JSON.stringify(require("./package.json").version)
     })
